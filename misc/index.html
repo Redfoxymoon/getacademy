@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <button onclick="playvid()">Trykk på meg</button>
+        <video id="tada" width="640" height="480 onloadstart="this.volume=0.5">
+            <script>
+                //html5 setter 100% lyd som default. >:(
+                var video = document.currentScript.parentElement;
+                video.volume = 0.1;
+            </script>
+            <source src="https://foxi.me/tada.mp4" type="video/mp4">
+            <source src="https://foxi.me/tada.ogg" type="video/ogg">
+        <script>
+            var vid = document.getElementById("tada")
+            function playvid()
+            {
+                vid.play();
+            }
+        </script>
+    </body>
+</html>
