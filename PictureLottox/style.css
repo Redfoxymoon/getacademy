@@ -1,0 +1,17 @@
+#board {
+	display: grid;
+	grid-template-columns: repeat(4, 200px);
+	grid-template-rows: repeat(4, 200px);
+}
+
+#board > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid gray;
+	background-color: darkgray;
+}
+
+img {
+	width: 100%;
+}
