@@ -59,9 +59,11 @@
 				document.getElementById(id).innerHTML = `<img src="img/elephant.jpg"/>`;
 			if(id === 'horse2')
 				document.getElementById(id).innerHTML = `<img src="img/horse.jpg"/>`;
-				
+			/* hehe... */
+			if(id === 'empty')
+				blankall();
 		}
-		window.onload = function()
+		function blankall()
 		{
 			document.getElementById('dog1').innerHTML = /*HTML*/``;
 			document.getElementById('frog1').innerHTML = /*HTML*/``;
@@ -78,6 +80,10 @@
 			document.getElementById('cat2').innerHTML = /*HTML*/``;
 			document.getElementById('elephant2').innerHTML = /*HTML*/``;
 			document.getElementById('horse2').innerHTML = /*HTML*/``;
+		}
+		window.onload = function()
+		{
+			blankall();
 		}
 	</script>
 </body>
