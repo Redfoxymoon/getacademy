@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Kalkulator</title>
+	<link rel=stylesheet href="oppgave-145D.css">
+</head>
+<body>
+<div id="app"></div>
+<script type="text/javascript">
+
+	//model
+	let input = '';
+
+	// view
+	update();
+	function update()
+	{
+		document.getElementById('app').innerHTML = `
+			<div class="calc resultBox" id="resultBox" id="screen" '${input}'></div>
+
+			<div class="calc firstInRow" onclick="addCharacter(7)">7</div>
+			<div class="calc" onclick="addCharacter(8)">8</div>
+			<div class="calc" onclick="addCharacter(9)">9</div>
+			<div class="calc" onclick="addCharacter('÷')">÷</div>
+
+			<div class="calc firstInRow" onclick="addCharacter(4)">4</div>
+			<div class="calc" onclick="addCharacter(5)">5</div>
+			<div class="calc" onclick="addCharacter(6)">6</div>
+			<div class="calc" onclick="addCharacter('×')">×</div>
+
+			<div class="calc firstInRow" onclick="addCharacter(1)">1</div>
+			<div class="calc" onclick="addCharacter(2)">2</div>
+			<div class="calc" onclick="addCharacter(3)">3</div>
+			<div class="calc" onclick="addCharacter('-')">-</div>
+
+			<div class="calc firstInRow" onclick="addCharacter(0)">0</div>
+			<div class="calc" onclick="clearResult();">C</div>
+			<div class="calc" onclick="calculate()">=</div>
+			<div class="calc" onclick="addCharacter('+')">+</div>
+		`;
+	}
+
+	// controller
+	function addCharacter(c)
+	{
+		input += c;
+		update();
+	}
+
+	function clearResult()
+	{
+		input = '';
+		update();
+	}
+
+	function calculate()
+	{
+		let calculation = input
+			.replace('×', '*')
+			.replace('÷', '/');
+		input = eval(calculation);
+	}
+</script>
+</body>
+</html>
